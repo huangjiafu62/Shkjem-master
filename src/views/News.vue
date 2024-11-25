@@ -22,13 +22,12 @@
 
         <div class="content-nav-item">
           <div class="item-list" v-for="(item,index) in newsList" :key="index">
-            <div class="item-img" v-lazy:background-image="item.filePath"></div>
+            <div class="item-img" v-lazy:background-image=" item.filePath"></div>
 
             <p class="item-list-title">{{item.title}}</p>
             <p class="item-list-content">{{item.content}}</p>
             <div class="item-list-more">
               <router-link
-                class="text-decoration"
                 :to="{ name: 'newsdetails', params: { item: item }}"
               >
                 <img src="../assets/img/sanjiao.png" />
@@ -138,14 +137,13 @@ export default {
         width: 100%;
         margin: 0 auto;
         display: flex;
-        justify-content: flex-start;
         flex-wrap: wrap;
+        justify-content: center;
 
        .item-list {
-          width: 30vw; // 改为相对单位，占屏幕宽度的30%
+          width: 35vw; // 改为相对单位，占屏幕宽度的30%
           height: 45vh; // 改为相对单位，占屏幕高度的45%
           display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
           margin: 2vh 1vw; // 改为相对单位，外边距上下为屏幕高度的2%，左右为屏幕宽度的1%

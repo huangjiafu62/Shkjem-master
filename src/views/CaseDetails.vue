@@ -20,11 +20,12 @@ export default {
   },
   data() {
     return {
-      caseIdList: {}
+      caseIdList: {},
+      id:0
     };
   },
   created() {
-    this.cas = this.$route.params.cas;
+    this.id = this.$route.params.id;
     window.console.log(this.cas.filePath);
   },  
   mounted() {
@@ -32,8 +33,7 @@ export default {
   },
   methods: {
     loadData(){
-      this.caseIdList = this.cas
-      window.console.log(this.caseIdList)
+      
     }
   }
 };

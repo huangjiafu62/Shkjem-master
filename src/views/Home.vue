@@ -38,32 +38,6 @@
           </li>
         </ul>
       </swiper-slide>
-      <!-- <swiper-slide class="swiper-slide slide-two">
-        <div class="page">
-          <h3>经典案例</h3>
-          <p>Suecessful Cass</p>
-        </div>
-        <ul class="case-item">
-          <li
-            v-for="(item, index) in caseLiat"
-            :key="index"
-            v-lazy:background-image="item.fileUrls"
-          >
-            <router-link
-              class="text-decoration"
-              :to="{ name: 'casedetails', params: { item: item} }"
-            >
-              <div class="case-item-hover">
-                <p class="hover-title">{{ item.title }}</p>
-                <div class="bottom"></div>
-                <div class="more">
-                  <span>MORE</span>
-                </div>
-              </div>
-            </router-link>
-          </li>
-        </ul>
-      </swiper-slide> -->
       <swiper-slide class="swiper-slide slide-three">
         <div class="page">
           <h3>最新资讯</h3>
@@ -430,10 +404,9 @@ export default {
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   li {
-    width: 330px;
-    height: 250px;
+    width: 350px;
+    height: 210px;
     list-style: none;
     background-repeat: no-repeat;
     background-size: cover;
@@ -474,14 +447,14 @@ export default {
   }
   .bottom {
     border-bottom: 1px solid #fff;
-    width: 60px;
+    width: 40px;
     margin: 0 auto;
   }
   .more {
     width: 90px;
     padding: 5px 5px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
     border: 2px solid #fff;
     span {
       color: #fff;
@@ -511,12 +484,12 @@ export default {
   justify-content: center;
 
   &-item {
-    width: 400px;
+    width: 380px;
     display: flex;
     flex-direction: column;
 
     .item-img {
-      width: 360px;
+      width: 320px;
       height: 230px;
       background-repeat: no-repeat;
       background-size: cover;
@@ -541,20 +514,20 @@ export default {
       margin: 0 auto;
       //border: 1px solid paleturquoise;
       h3 {
-        font-size: 22px;
+        font-size: 20px;
         height: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
       p {
-        font-size: 15px;
+        font-size: 14px;
         height: 80px;
         overflow: hidden;
         margin: 10px 0;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         white-space: normal !important;
         word-wrap: break-word;

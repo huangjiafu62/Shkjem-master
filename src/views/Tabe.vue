@@ -4,14 +4,14 @@
       <div class="case-section" v-loading="loading">
         <div class="case-section-content">
           <div class="case-section-content-list" v-for="(cas,index) in caseList" :key="index">
-            <img v-lazy="cas.filePath" />
+            <img v-lazy="cas.fileUrls" />
             <div class="content-list-abstract" :class="{'abstract-active' : index%2!=1}">
               <p class="abstract-title">{{cas.name}}</p>
               <p class="abstract-content">{{cas.description}}</p>
               <div class="more">
                 <router-link
                   class="text-decoration"
-                  :to="{ name: 'casedetails', params: { cas: cas }}"
+                  :to="{ name: 'casedetails', params: { cas: cas.id }}"
                 >
                   <span>more</span>
                   <img src="../assets/img/sanjiao.png" />
@@ -32,16 +32,21 @@
     data() {
       return {
         loading: true,
+        id:0,
         caseList: []
       };
     },
+    created(){
+      this.id = this.$route.query.id;
+      window.console.log(this.id);
+    },
     mounted() {
       this.$http
-        .get("business/list")
+        .get(`case/getCases?id=${this.id}`)
         .then(response => {
           this.caseList = response.data.data;
           for(let obj of this.caseList){
-            obj.filePath=this.imgserver+obj.filePath
+            obj.fileUrls=this.imgserver+obj.fileUrls.split(",")[0]
           }
           this.loading = false;
         })
